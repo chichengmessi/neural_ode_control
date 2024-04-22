@@ -11,3 +11,5 @@ Basically, the neural ODE strcuture that we use is
 And we can get the trajectory - which is the predicted trajectory under the current controller via
 
 ![Screenshot 2024-04-22 122106](https://github.com/chichengmessi/neural_ode_control/assets/43145509/5ca3be0b-31b9-42c3-94d8-2b0777a1d509)
+
+From which we can build our loss function: minimize the control objective loss (e.g. distance between XT and some target states) and the trajectory fitting loss (e.g. deviations between real trajectories in the environment using current controller and the predicted trajectories)
