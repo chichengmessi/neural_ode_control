@@ -6,6 +6,6 @@ Neural ODE Control is a neural ODE based method for controlling unknown dynamica
 
 Basically, the neural ODE strcuture that we use is 
 
-![equation](https://quicklatex.com/latex3.f/png.latex?latex=\dot{x}%20=%20%20{g}_{\gamma}(x,%20{h}_{\theta}(x,%20t),%20t)&amp;size=18)
+$\dot{x} =  {g}_{\gamma}(x, {h}_{\theta}(x, t), t)$ 
 
 
