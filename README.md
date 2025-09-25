@@ -16,9 +16,13 @@ From which we can build our loss function: minimize the control objective loss (
 
 ## Learning Process
 
-The following animation demonstrates the learning process of NODEC on simple dynamics, showing the rollout in learned dynamics versus ground truth dynamics. As training progresses, we can observe that:
+The following animation demonstrates the learning process of NODEC on simple dynamics, showing the rollout in learned dynamics versus ground truth dynamics. 
 
-- The learned dynamics becomes increasingly accurate compared to the ground truth
+The rollout diagram is on left hand side, and the control used during that rollout is on the right hand side. The rollouts with the same controller being trained are done both in learned dyanmics (g) and in ground truth dynamics (f). 
+
+As training epochs goes, we can observe that:
+
+- The learned dynamics becomes increasingly accurate compared to the ground truth (rollout lines getting closer)
 - The control quality improves as the system gets closer to the target state
 
 ![Learning Process](assets/learning_process.gif)
