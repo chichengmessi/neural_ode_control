@@ -13,3 +13,12 @@ And we can get the trajectory - which is the predicted trajectory under the curr
 ![Screenshot 2024-04-22 122106](https://github.com/chichengmessi/neural_ode_control/assets/43145509/5ca3be0b-31b9-42c3-94d8-2b0777a1d509)
 
 From which we can build our loss function: minimize the control objective loss (e.g. distance between XT and some target states) and the trajectory fitting loss (e.g. deviations between real trajectories in the environment using current controller and the predicted trajectories)
+
+## Learning Process
+
+The following animation demonstrates the learning process of NODEC on simple dynamics, showing the rollout in learned dynamics versus ground truth dynamics. As training progresses, we can observe that:
+
+- The learned dynamics becomes increasingly accurate compared to the ground truth
+- The control quality improves as the system gets closer to the target state
+
+![Learning Process](assets/learning_process.gif)
