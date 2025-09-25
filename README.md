@@ -25,4 +25,6 @@ As training epochs goes, we can observe that:
 - The learned dynamics becomes increasingly accurate compared to the ground truth (rollout lines getting closer)
 - The control quality improves as the system gets closer to the target state
 
+Through an intriguing interplay and mutual supervision between these two neural networks (dynamics learner and controller), the model learns the optimal control as well as the system dynamics.
+
 ![Learning Process](assets/learning_process.gif)
