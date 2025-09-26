@@ -30,7 +30,7 @@ From the architecture, we can build our loss function by minimizing two key comp
 - **Trajectory Fitting Loss**: Deviations between real trajectories in the environment (using the current controller) and the predicted trajectories
 
 ## Learning visualization 
-### Learning Process for simple Ax + Bu dynamics
+### NODEC for simple Ax + Bu dynamics
 
 The following animation demonstrates the learning process of NODEC on simple dynamics, showing the rollout in learned dynamics versus ground truth dynamics. The objective of this control task is to steer towards a target state.
 
@@ -41,7 +41,7 @@ The following animation demonstrates the learning process of NODEC on simple dyn
 ![Learning Process](assets/axbu_learning_process.gif)
 
 
-### Learning Process for CartpCartPole dynamics
+### NODEC for CartCartPole dynamics
 
 The following animation demonstrates the learning process of NODEC on CartPole dynamics, showing the rollout in learned dynamics versus ground truth dynamics. The objective of this control task is to keep the state close to (0,0,0,0), which is just four horizontal lines at y=0 in the state space.
 
