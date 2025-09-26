@@ -29,13 +29,24 @@ From the architecture, we can build our loss function by minimizing two key comp
 - **Control Objective Loss**: Distance between the final state X_T and target states
 - **Trajectory Fitting Loss**: Deviations between real trajectories in the environment (using the current controller) and the predicted trajectories
 
-## Learning Process
+## Learning visualization 
+### Learning Process for simple Ax + Bu dynamics
 
-The following animation demonstrates the learning process of NODEC on simple dynamics, showing the rollout in learned dynamics versus ground truth dynamics.
+The following animation demonstrates the learning process of NODEC on simple dynamics, showing the rollout in learned dynamics versus ground truth dynamics. The objective of this control task is to steer towards a target state.
 
-**Animation Layout:**
 - **Left side**: Rollout diagram showing trajectory evolution
 - **Right side**: Control signal used during that rollout
+
+
+![Learning Process](assets/axbu_learning_process.gif)
+
+
+### Learning Process for CartpCartPole dynamics
+
+The following animation demonstrates the learning process of NODEC on CartPole dynamics, showing the rollout in learned dynamics versus ground truth dynamics. The objective of this control task is to keep the state close to (0,0,0,0), which is just four horizontal lines at y=0 in the state space.
+
+- **Top level**: Rollout diagram showing trajectory evolution in 4D state space 
+- **Bottom level**: Control signal used during that rollout
 
 The rollouts with the same controller h<sub>θ</sub> being trained are performed in both:
 - **Learned dynamics (g<sub>γ</sub>)**: The neural network's approximation of the system
@@ -47,4 +58,9 @@ The rollouts with the same controller h<sub>θ</sub> being trained are performed
 - The control quality improves as the system gets closer to the target state
 - Through mutual supervision between the dynamics learner g<sub>γ</sub> and controller h<sub>θ</sub> networks, the model simultaneously learns optimal control and system dynamics
 
-![Learning Process](assets/learning_process.gif)
+![Learning Process](assets/cartpole_learning_process.gif)
+
+### Observations
+- The learned dynamics becomes increasingly accurate compared to the ground truth (rollout lines converge)
+- The control quality improves as we can see the system gets closer and closer to the target state (or stay at it)
+- Through mutual supervision and interplay between the dynamics learner g<sub>γ</sub> and controller h<sub>θ</sub> networks, the model simultaneously learns optimal control and system dynamics
