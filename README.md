@@ -12,9 +12,9 @@ The NODEC architecture based on neural ODE is illustrated below:
 
 ![Screenshot 2024-04-22 122106](https://github.com/chichengmessi/neural_ode_control/assets/43145509/d199d0f6-5ff2-44b4-a16d-2fd50bd17897)
 
-We can obtain the predicted rollout trajectory under the current controller using the above equation. If we swap the learned dynamics g_γ with the ground truth dynamics f, we can obtain the real rollout trajectory under the current controller h_θ.
+We can obtain the predicted rollout trajectory under the current controller using the above equation. If we swap the learned dynamics g<sub>γ</sub> with the ground truth dynamics f, we can obtain the real rollout trajectory under the current controller h<sub>θ</sub>.
 
-These two rollouts are essential for training both the dynamics learner g_γ and the controller h_θ.
+These two rollouts are essential for training both the dynamics learner g<sub>γ</sub> and the controller h<sub>θ</sub>.
 
 ## Training Algorithm
 
@@ -37,14 +37,14 @@ The following animation demonstrates the learning process of NODEC on simple dyn
 - **Left side**: Rollout diagram showing trajectory evolution
 - **Right side**: Control signal used during that rollout
 
-The rollouts with the same controller h_θ being trained are performed in both:
-- **Learned dynamics (g_γ)**: The neural network's approximation of the system
+The rollouts with the same controller h<sub>θ</sub> being trained are performed in both:
+- **Learned dynamics (g<sub>γ</sub>)**: The neural network's approximation of the system
 - **Ground truth dynamics (f)**: The actual system dynamics
 
 **Key Observations as Training Progresses:**
 
 - The learned dynamics becomes increasingly accurate compared to the ground truth (rollout lines converge)
 - The control quality improves as the system gets closer to the target state
-- Through mutual supervision between the dynamics learner g_γ and controller h_θ networks, the model simultaneously learns optimal control and system dynamics
+- Through mutual supervision between the dynamics learner g<sub>γ</sub> and controller h<sub>θ</sub> networks, the model simultaneously learns optimal control and system dynamics
 
 ![Learning Process](assets/learning_process.gif)
